@@ -1,11 +1,48 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaHome, FaProjectDiagram, FaFileAlt } from 'react-icons/fa';
-import { DiHtml5, DiCss3, DiJavascript1, DiReact, DiNodejs, DiMongodb, DiGit, DiDocker } from 'react-icons/di';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDocker, FaGitAlt, FaPython, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { SiTailwindcss, SiMongodb, SiPostgresql, SiTypescript, SiExpress } from 'react-icons/si';
 
 function App() {
   const [activePage, setActivePage] = useState('home');
-
+  const projects = [
+    {
+      name:"Service de communication instantané",
+      description:"Concevoir et développer un service de chat performant, évolutif et sécurisé, avec une architecture client-serveur et un service IAM pour la gestion des identités.",
+      image:"https://images01.nicepage.com/c461c07a441a5d220e8feb1a/a17abde8d83650a582a28432/users-with-speech-bubbles-vector_53876-82250.jpg",
+      github:'https://github.com/hissoune/Service_de_Communication_Backend.git'
+    },
+    {
+      name:"Service de communication instantané",
+      description:"Concevoir et développer un service de chat performant, évolutif et sécurisé, avec une architecture client-serveur et un service IAM pour la gestion des identités.",
+      image:"https://images01.nicepage.com/c461c07a441a5d220e8feb1a/a17abde8d83650a582a28432/users-with-speech-bubbles-vector_53876-82250.jpg",
+      github:'https://github.com/hissoune/Service_de_Communication_Backend.git'
+    },
+    {
+      name:"Service de communication instantané",
+      description:"Concevoir et développer un service de chat performant, évolutif et sécurisé, avec une architecture client-serveur et un service IAM pour la gestion des identités.",
+      image:"https://images01.nicepage.com/c461c07a441a5d220e8feb1a/a17abde8d83650a582a28432/users-with-speech-bubbles-vector_53876-82250.jpg",
+      github:'https://github.com/hissoune/Service_de_Communication_Backend.git'
+    },
+    {
+      name:"Service de communication instantané",
+      description:"Concevoir et développer un service de chat performant, évolutif et sécurisé, avec une architecture client-serveur et un service IAM pour la gestion des identités.",
+      image:"https://images01.nicepage.com/c461c07a441a5d220e8feb1a/a17abde8d83650a582a28432/users-with-speech-bubbles-vector_53876-82250.jpg",
+      github:'https://github.com/hissoune/Service_de_Communication_Backend.git'
+    },
+    {
+      name:"Service de communication instantané",
+      description:"Concevoir et développer un service de chat performant, évolutif et sécurisé, avec une architecture client-serveur et un service IAM pour la gestion des identités.",
+      image:"https://images01.nicepage.com/c461c07a441a5d220e8feb1a/a17abde8d83650a582a28432/users-with-speech-bubbles-vector_53876-82250.jpg",
+      github:'https://github.com/hissoune/Service_de_Communication_Backend.git'
+    },
+    {
+      name:"Service de communication instantané",
+      description:"Concevoir et développer un service de chat performant, évolutif et sécurisé, avec une architecture client-serveur et un service IAM pour la gestion des identités.",
+      image:"https://images01.nicepage.com/c461c07a441a5d220e8feb1a/a17abde8d83650a582a28432/users-with-speech-bubbles-vector_53876-82250.jpg",
+      github:'https://github.com/hissoune/Service_de_Communication_Backend.git'
+    }
+  ]
   const renderContent = () => {
     switch (activePage) {
       case 'home':
@@ -15,78 +52,77 @@ function App() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
+            className="min-h-screen bg-darkGreen text-white text-center flex flex-col justify-center items-center px-6"
           >
-            <div className="min-h-screen bg-gradient-to-b from-blue-500 via-blue-800 to-black opacity-10 animate-pulse text-white text-center flex flex-col justify-center items-center px-6 relative overflow-y-hidden">
-              <div className="absolute top-0 left-0 w-full h-full "></div>
-              <h1 className="text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
-                Hi, I&apos;m Khalid Hissoune
-              </h1>
-              <p className="text-2xl max-w-4xl mx-auto mb-8">
-                A futuristic web developer passionate about crafting innovative digital solutions. Welcome to my portfolio.
-              </p>
+            <motion.div
+              className="flex items-center justify-center mb-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
               <img
-                src="/profile-photo.jpg"
-                alt="Profile"
-                className="rounded-full shadow-2xl mb-10 w-48 h-48 hover:scale-105 transition-transform"
+                src="https://i.pinimg.com/236x/58/94/28/589428fe3cc9319a686ed3767eb7ea5c.jpg" // Add your photo here
+                alt="Khalid Hissoune"
+                className="rounded-full w-24 h-24 object-cover mr-4"
               />
-              <a
-                href="#journey"
-                className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-4 px-8 rounded-full shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+              <motion.h1
+                className="text-4xl font-semibold text-white"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
               >
-                Explore My Journey
-              </a>
-            </div>
+                Hi, I&apos;m Khalid Hissoune
+              </motion.h1>
+            </motion.div>
 
-            <div id="journey" className="min-h-screen text-white py-20 px-6">
-              <h2 className="text-6xl font-bold mb-10 animate-fade-in">My Journey</h2>
-              <div className="flex flex-wrap justify-center gap-12 max-w-6xl mx-auto">
-                {[
-                  { year: '2020', milestone: 'Started learning web development', details: 'HTML, CSS, and JavaScript' },
-                  { year: '2022', milestone: 'Internship at Ecowatt', details: 'React and Node.js experience' },
-                  { year: '2024', milestone: 'Building Advanced Applications', details: 'Docker, MongoDB, JWT auth' }
-                ].map((event, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-gray-800 p-8 rounded-xl shadow-xl text-center"
-                  >
-                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center shadow-md">
-                      {event.year}
-                    </div>
-                    <h4 className="text-xl font-semibold mb-2 mt-6">{event.milestone}</h4>
-                    <p className="text-gray-300">{event.details}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+            <motion.p
+              className="text-lg max-w-3xl mx-auto mb-8 font-light"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              A passionate full-stack web developer focused on creating meaningful digital experiences.
+            </motion.p>
 
-            <div className="min-h-screen  text-white py-20 relative">
-              <h2 className="text-6xl font-bold text-center mb-12 animate-fade-in">My Skills</h2>
-              <div className="flex flex-wrap justify-center gap-12">
+            <motion.div
+              className="mb-12"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <h2 className="text-2xl font-semibold mb-4">Core Skills</h2>
+              <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6 justify-center">
                 {[
-                  { icon: DiHtml5, label: 'HTML5' },
-                  { icon: DiCss3, label: 'CSS3' },
-                  { icon: DiJavascript1, label: 'JavaScript' },
-                  { icon: DiReact, label: 'React' },
-                  { icon: DiNodejs, label: 'Node.js' },
-                  { icon: DiMongodb, label: 'MongoDB' },
-                  { icon: DiGit, label: 'Git' },
-                  { icon: DiDocker, label: 'Docker' }
+                  { icon: FaHtml5, label: 'HTML5' },
+                  { icon: FaCss3Alt, label: 'CSS3' },
+                  { icon: FaJs, label: 'JavaScript' },
+                  { icon: FaReact, label: 'React' },
+                  { icon: FaNodeJs, label: 'Node.js' },
+                  { icon: SiMongodb, label: 'MongoDB' },
+                  { icon: FaDocker, label: 'Docker' },
+                  { icon: FaGitAlt, label: 'Git' },
+                  { icon: SiTailwindcss, label: 'Tailwind CSS' },
+                  { icon: SiTypescript, label: 'TypeScript' },
+                  { icon: FaPython, label: 'Python' },
+                  { icon: SiPostgresql, label: 'PostgreSQL' },
+                  { icon: FaGithub, label: 'GitHub' },
+                  { icon: SiExpress, label: 'Express.js' },
                 ].map((skill, index) => (
                   <motion.div
                     key={index}
-                    className="text-center bg-gray-800 p-8 rounded-lg shadow-xl hover:bg-gray-700 transition-all"
-                    whileHover={{ scale: 1.2 }}
+                    className="text-center bg-darkGray border border-gray-700 p-4 rounded-md shadow-sm hover:shadow-lg transition-all transform hover:scale-105"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
                   >
-                    <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white w-16 h-16 flex items-center justify-center rounded-full shadow-lg mb-4">
-                      <skill.icon size={50} className="text-white" />
+                    <div className="text-4xl text-green-500 mb-2">
+                      <skill.icon />
                     </div>
-                    <p className="text-lg font-semibold">{skill.label}</p>
+                    <p className="text-sm font-medium text-gray-300">{skill.label}</p>
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         );
 
@@ -94,89 +130,134 @@ function App() {
         return (
           <motion.div
             key="projects"
-            className="py-20  text-white relative overflow-hidden"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className="min-h-screen bg-darkGreen text-white py-20 text-center "
           >
-            <h2 className="text-6xl font-bold mb-12 animate-fade-in text-center">My Projects</h2>
-            <div className="flex flex-wrap justify-center gap-12 max-w-6xl mx-auto px-6">
-              {[
-                { name: 'Cinema Management App', link: 'https://github.com/hissoune/cinema-management' },
-                { name: 'Quiz Master', link: 'https://github.com/hissoune/quiz-master' },
-                { name: 'E-Shop', link: 'https://github.com/hissoune/e-shop' }
-              ].map((project, index) => (
+          
+            <motion.h2
+              className="text-4xl font-semibold mb-6 text-green-500"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              Projects
+            </motion.h2>
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 px-10">
+              {projects.map((project, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-800 p-8 rounded-xl shadow-xl text-center transition-all"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className=" rounded-lg shadow-md flex justify-center"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1, duration: 0.3 }}
                 >
-                  <h4 className="text-2xl font-semibold mb-4">{project.name}</h4>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-2 px-6 rounded-full"
-                  >
-                    View on GitHub
-                  </a>
+                  <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
+                    <div class="w-sm">
+                      <img class="w-64" src={project.image} alt="" />
+                      <div class="mt-4 text-green-600 text-center">
+                        <h1 class="text-xl font-bold">{project.name}</h1>
+                        <p class="mt-4 text-gray-600">{project.description}</p>
+                        <a href={project.github} className="w-80   "><FaGithub  /></a>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         );
 
-      case 'resume':
+      case 'contact':
         return (
           <motion.div
-            key="resume"
-            className="text-center py-10"
+            key="contact"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className="min-h-screen bg-darkGreen text-white py-20 text-center"
           >
-            <h1 className="text-5xl font-bold mb-6">My Resume</h1>
-            <a
-              href="/resume.pdf"
-              download
-              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-4 px-8 rounded-full shadow-lg"
+            <motion.h2
+              className="text-4xl font-semibold mb-6 text-green-500"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
             >
-              Download Resume
-            </a>
+              Contact Me
+            </motion.h2>
+            <form className="max-w-md mx-auto bg-darkGray p-6 rounded-lg shadow-md">
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  className="w-full p-3 border border-gray-700 rounded-md focus:ring focus:ring-green-200"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full p-3 border border-gray-700 rounded-md focus:ring focus:ring-green-200"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                <textarea
+                  placeholder="Write your message"
+                  className="w-full p-3 border border-gray-700 rounded-md focus:ring focus:ring-green-200"
+                ></textarea>
+              </div>
+              <button type="submit" className="w-full p-3 bg-green-600 text-white font-semibold rounded-md">
+                Send Message
+              </button>
+            </form>
           </motion.div>
         );
+
+      default:
+        return null;
     }
   };
 
   return (
-    <div className="  font-sans min-h-screen flex flex-col" style={{
-      backgroundImage: 'url("https://i.pinimg.com/736x/97/04/a3/9704a3edf038940e01dae3d438eb71f0.jpg")',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    }}>
-      <nav className="bg-gray-900 text-white px-8 fixed w-full z-50 shadow-lg py-4">
-        <ul className="flex justify-center space-x-8">
-          {[
-            { label: 'Home', icon: FaHome, key: 'home' },
-            { label: 'Projects', icon: FaProjectDiagram, key: 'projects' },
-            { label: 'Resume', icon: FaFileAlt, key: 'resume' }
-          ].map((navItem) => (
-            <li key={navItem.key}>
-              <button
-                onClick={() => setActivePage(navItem.key)}
-                className={`flex items-center space-x-2 text-lg font-semibold transition-all transform ${
-                  activePage === navItem.key
-                    ? 'text-blue-400 scale-105'
-                    : 'text-gray-300 hover:text-blue-400'
-                }`}
-              >
-                <navItem.icon size={24} />
-                <span>{navItem.label}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <main className="flex-grow">
-        {renderContent()}
-      </main>
+    <div className="font-sans bg-black text-white min-h-screen">
+      <header className="bg-darkGray p-6">
+        <nav className="flex justify-between items-center">
+          <motion.div
+            className="text-xl font-semibold text-green-500 cursor-pointer"
+            onClick={() => setActivePage('home')}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1 }}
+          >
+            Khalid Hissoune
+          </motion.div>
+          <div className="flex space-x-6">
+            <motion.div
+              className="text-lg cursor-pointer hover:text-green-500"
+              onClick={() => setActivePage('projects')}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              Projects
+            </motion.div>
+            <motion.div
+              className="text-lg cursor-pointer hover:text-green-500"
+              onClick={() => setActivePage('contact')}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              Contact
+            </motion.div>
+          </div>
+        </nav>
+      </header>
+      {renderContent()}
     </div>
   );
 }

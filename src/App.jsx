@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDocker, FaGitAlt, FaPython, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiPostgresql, SiTypescript, SiExpress } from 'react-icons/si';
-
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDocker, FaGitAlt, FaPython, FaGithub,FaBootstrap,FaVuejs,FaLaravel,FaSymfony,FaUbuntu  , FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { SiTailwindcss, SiMongodb, SiPostgresql, SiTypescript, SiExpress,SiNestjs ,SiJira  } from 'react-icons/si';
+import {RiNextjsFill } from 'react-icons/ri'
 function App() {
   const [activePage, setActivePage] = useState('home');
   const projects = [
@@ -90,7 +90,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              <h2 className="text-2xl font-semibold mb-4">Core Skills</h2>
+              <h2 className="text-2xl font-semibold mb-4">CORE SKILLS</h2>
               <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6 justify-center">
                 {[
                   { icon: FaHtml5, label: 'HTML5' },
@@ -107,6 +107,14 @@ function App() {
                   { icon: SiPostgresql, label: 'PostgreSQL' },
                   { icon: FaGithub, label: 'GitHub' },
                   { icon: SiExpress, label: 'Express.js' },
+                  { icon: FaBootstrap, label: 'Bootstrap' },
+                  { icon: FaVuejs, label: 'VueJs' },
+                  { icon: RiNextjsFill, label: 'NextJs' },
+                  { icon: FaLaravel, label: 'Laravel' },
+                  { icon: FaSymfony , label: 'Symfony' },
+                  { icon: SiNestjs , label: 'NestJS' },
+                  { icon: FaUbuntu , label: 'ubuntu' },
+                  { icon: SiJira , label: 'Jira ' },
                 ].map((skill, index) => (
                   <motion.div
                     key={index}
@@ -118,10 +126,31 @@ function App() {
                     <div className="text-4xl text-green-500 mb-2">
                       <skill.icon />
                     </div>
-                    <p className="text-sm font-medium text-gray-300">{skill.label}</p>
-                  </motion.div>
+                    <p className="text-center text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
+  {skill.label}
+</p>                  </motion.div>
                 ))}
               </div>
+            </motion.div>
+            <motion.div
+              className="mb-12"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+            <h2 className="text-2xl font-semibold mb-4">ÉXPERIENCE</h2>
+           <motion.div>
+            <div className="text-center bg-darkGray border border-gray-700 p-4 rounded-md shadow-sm hover:shadow-lg transition-all transform hover:scale-105">
+            Full-Stack Web Development - Intern at Ecowatt 2024 (2 months)
+
+Projects
+
+Reservation and Payment Platform: A specialized tool for the solar energy sector. (Laravel - ReactJs)
+E-Shop: A consultation and installation service platform for solar energy projects, showcasing completed projects and their locations.
+              </div>
+           </motion.div>
+
+
             </motion.div>
           </motion.div>
         );
@@ -144,7 +173,7 @@ function App() {
             >
               Projects
             </motion.h2>
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 px-10">
+            <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 px-10">
               {projects.map((project, index) => (
                 <motion.div
                   key={index}
